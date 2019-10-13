@@ -18,24 +18,24 @@ public class StartCheck : MonoBehaviour {
         {
             Debug.Log("First Time Opening");
 
-            //Set first time opening to false
-            PlayerPrefs.SetInt("FIRSTTIMEOPENING", 0);
-
             foreach (InputField field in inputFields)
             {
+                var xx = field.GetComponent<InputField>();
                 var se = new InputField.SubmitEvent();
                 se.AddListener(delegate {
                     SubmitText(field.name, field.text);
                 });
-                field.onEndEdit = se;
+                xx.onEndEdit = se;
             }
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            PlayerPrefs.SetInt("FIRSTTIMEOPENING", 0);
+
+
         }
         else
         {
             Debug.Log("NOT First Time Opening");
 
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            SceneManager.LoadScene(Random.Range(2, 5));
         }
     }
 	
@@ -47,5 +47,10 @@ public class StartCheck : MonoBehaviour {
         string event_id = armoryType + ":" + itemRarity;
         float event_value = 0.0f;
         GameAnalytics.NewDesignEvent(event_id, event_value);
+    }
+
+    public void NextLevel()
+    {
+        SceneManager.LoadScene(Random.Range(2, 5));
     }
 }

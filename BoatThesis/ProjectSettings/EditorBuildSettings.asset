@@ -18,6 +18,12 @@ EditorBuildSettings:
     path: Assets/Boat Game Template/Scenes/Game.unity
     guid: 6a22a160f06ee0947883f59e0250a701
   - enabled: 1
+    path: Assets/Boat Game Template/Scenes/Game - V2.unity
+    guid: 9a450bb311db9ee43bd4acd539f25f9a
+  - enabled: 1
+    path: Assets/Boat Game Template/Scenes/Game No Word.unity
+    guid: 966bf365f2cdd6e4f8c40a471d3ea44d
+  - enabled: 1
     path: Assets/Boat Game Template/Scenes/Logo.unity
     guid: 43b48667c03e8d842a6357dc98716ba4
   m_configObjects: {}

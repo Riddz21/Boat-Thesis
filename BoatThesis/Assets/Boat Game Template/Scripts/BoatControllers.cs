@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 using GameAnalyticsSDK;
+using UnityEngine.SceneManagement;
 
 public class BoatControllers : MonoBehaviour {
     //Control types
@@ -75,12 +76,31 @@ public class BoatControllers : MonoBehaviour {
     public Text gemText;
     public Text scoreText;
     public Text thesisText;
-    public string[] thesisWords = { "Sweet", "Good", "Nice", "Positive", "Wow", "Well Done", "Cool", "What a Delight!", "Super" };
+    private string[] thesisWords;
     // Use this for initialization setup all the varibales and values
     void Start() {
         //thesisText.text = "";
         Time.timeScale = 1.0f;
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
+        GameAnalytics.Initialize();
+        if (SceneManager.GetActiveScene().name == "Game")
+        {
+            string progression_01 = "World_01";
+            GameAnalytics.NewProgressionEvent(GAProgressionStatus.Start, progression_01);
+            thesisWords = new string[] { "Sweet", "Good", "Nice", "Positive", "Wow", "Well Done", "Cool", "What a Delight!", "Super" };
+        }
+        else if (SceneManager.GetActiveScene().name == "Game - V2")
+        {
+            string progression_01 = "World_02";
+            GameAnalytics.NewProgressionEvent(GAProgressionStatus.Start, progression_01);
+            thesisWords = new string[] { "Excellent", "Fabulous", "Awesome", "Great Job", "Extraordinary", "Splendid", "Remarkable", "Impressive", "Superb", "Wonderful" };
+        }
+        else if (SceneManager.GetActiveScene().name == "Game No Word")
+        {
+            string progression_01 = "World_03";
+            GameAnalytics.NewProgressionEvent(GAProgressionStatus.Start, progression_01);
+            thesisWords = new string[] { };
+        }
 
         audioPlayer = transform.GetComponent<AudioSource>();
 
@@ -158,7 +178,7 @@ public class BoatControllers : MonoBehaviour {
 
         isStarted = true;
 
-        GameAnalytics.Initialize();
+        
         if (speedManager)
         {
             speedManager.enabled = true;

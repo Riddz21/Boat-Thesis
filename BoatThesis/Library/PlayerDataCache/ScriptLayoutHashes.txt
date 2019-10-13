@@ -2,8 +2,11 @@ WindowsStandalone
 PlayerPath?
 D:/BOat/Boat-Thesis/BoatThesis/WindowsBuild/WindowsBuild.exe
 SceneListBegin?
+Assets/Scenes/New Scene.unity
 Assets/Boat Game Template/Scenes/Buy.unity
 Assets/Boat Game Template/Scenes/Game.unity
+Assets/Boat Game Template/Scenes/Game - V2.unity
+Assets/Boat Game Template/Scenes/Game No Word.unity
 Assets/Boat Game Template/Scenes/Logo.unity
 SceneListEnd?
 75cd0c6c744b9733ef29aa6c59ece2b1 Assembly-CSharp.dll:TMPro.Examples.VertexZoom
@@ -146,6 +149,7 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 68b10ade6484681b05c3e24b62aa7dc7 Assembly-CSharp.dll:.GameController
 50a0fa002cfc67638c87a901e46b763e Assembly-CSharp.dll:TMPro.Examples.TMP_TextSelector_B
 ddffee96f0d6d59066aa9fbc8cd20335 Assembly-CSharp.dll:.SmoothFollow
+6756b5957e6eb76e784554af22485356 Assembly-CSharp.dll:.StartCheck
 020550babdb991365f61c5bffe1f4f52 Assembly-CSharp.dll:TMPro.Examples.Benchmark03
 b9332c0eee630779376843b5343eb250 Assembly-CSharp.dll:TMPro.Examples.TMP_TextInfoDebugTool
 2b08c8214a0edeab6f67224c3171f8c3 Assembly-CSharp.dll:.ChallengeInfo
@@ -236,7 +240,7 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 95406940024d5dd3c4618b1728ead617 Assembly-CSharp.dll:.ScrollController
 9de3a22eca9aefadba2d10d5987cefe3 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.ParticleKiller
-2ac7c6d03afe755342dcba3e96b5f11c Assembly-CSharp.dll:.BoatControllers
+0d0d9674b49fc9c05ac8c9e4cfa54cb7 Assembly-CSharp.dll:.BoatControllers
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:TMPro.Examples.TextConsoleSimulator
 75cd0c6c744b9733ef29aa6c59ece2b1 Assembly-CSharp.dll:TMPro.Examples.VertexShakeB
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:GameAnalyticsSDK.Events.GA_SpecialEvents
