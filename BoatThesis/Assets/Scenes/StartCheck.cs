@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using GameAnalyticsSDK;
 using UnityEngine.SceneManagement;
+using System;
 
 public class StartCheck : MonoBehaviour {
 
@@ -35,7 +36,7 @@ public class StartCheck : MonoBehaviour {
         {
             Debug.Log("NOT First Time Opening");
 
-            SceneManager.LoadScene(Random.Range(2, 5));
+            SceneManager.LoadScene(UnityEngine.Random.Range(2, 5));
         }
     }
 	
@@ -43,14 +44,15 @@ public class StartCheck : MonoBehaviour {
     {
         string armoryType = namesh;
         string itemRarity = textesh;
+        string itemType = DateTime.Now.ToString();
 
-        string event_id = armoryType + ":" + itemRarity;
+        string event_id = armoryType + ":" + itemRarity + ":" + itemType;
         float event_value = 0.0f;
         GameAnalytics.NewDesignEvent(event_id, event_value);
     }
 
     public void NextLevel()
     {
-        SceneManager.LoadScene(Random.Range(2, 5));
+        SceneManager.LoadScene(UnityEngine.Random.Range(2, 5));
     }
 }

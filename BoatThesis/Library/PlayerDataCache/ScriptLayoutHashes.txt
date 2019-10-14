@@ -1,6 +1,6 @@
-WindowsStandalone
+Android
 PlayerPath?
-D:/BOat/Boat-Thesis/BoatThesis/WindowsBuild/WindowsBuild.exe
+D:/BOat/Boat-Thesis/BoatThesis/AndroidBuilds/Test.apk
 SceneListBegin?
 Assets/Scenes/New Scene.unity
 Assets/Boat Game Template/Scenes/Buy.unity
