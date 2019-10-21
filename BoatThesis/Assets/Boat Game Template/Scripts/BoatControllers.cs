@@ -83,19 +83,19 @@ public class BoatControllers : MonoBehaviour {
         Time.timeScale = 1.0f;
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
         GameAnalytics.Initialize();
-        if (SceneManager.GetActiveScene().name == "Game")
+        if (SceneManager.GetActiveScene().buildIndex == 2)
         {
             string progression_01 = "World_01";
             GameAnalytics.NewProgressionEvent(GAProgressionStatus.Start, progression_01);
             thesisWords = new string[] { "Sweet", "Good", "Nice", "Positive", "Wow", "Well Done", "Cool", "What a Delight!", "Super" };
         }
-        else if (SceneManager.GetActiveScene().name == "Game - V2")
+        else if (SceneManager.GetActiveScene().buildIndex == 3)
         {
             string progression_01 = "World_02";
             GameAnalytics.NewProgressionEvent(GAProgressionStatus.Start, progression_01);
             thesisWords = new string[] { "Excellent", "Fabulous", "Awesome", "Great Job", "Extraordinary", "Splendid", "Remarkable", "Impressive", "Superb", "Wonderful" };
         }
-        else if (SceneManager.GetActiveScene().name == "Game No Word")
+        else if (SceneManager.GetActiveScene().buildIndex == 4)
         {
             string progression_01 = "World_03";
             GameAnalytics.NewProgressionEvent(GAProgressionStatus.Start, progression_01);
@@ -498,6 +498,10 @@ public class BoatControllers : MonoBehaviour {
 
     public void TextMani()
     {
+        if(SceneManager.GetActiveScene().buildIndex == 3)
+        {
+            return;
+        }
         //Debug.Log(score);
         if (score % 10 == 0)
         {

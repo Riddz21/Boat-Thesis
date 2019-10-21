@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using GameAnalyticsSDK;
 using UnityEngine.SceneManagement;
 using System;
+using System.Text.RegularExpressions;
 
 public class StartCheck : MonoBehaviour {
 
@@ -14,7 +15,6 @@ public class StartCheck : MonoBehaviour {
 
 	void Start () {
         GameAnalytics.Initialize();
-     
         if (PlayerPrefs.GetInt("FIRSTTIMEOPENING", 1) == 1)
         {
             Debug.Log("First Time Opening");
@@ -45,7 +45,8 @@ public class StartCheck : MonoBehaviour {
         string armoryType = namesh;
         string itemRarity = textesh;
         string itemType = DateTime.Now.ToString();
-
+        Regex r = new Regex("(?:[^a-z0-9 ]|(?<=['\"])s)");
+        itemType = r.Replace(itemType, String.Empty);
         string event_id = armoryType + ":" + itemRarity + ":" + itemType;
         float event_value = 0.0f;
         GameAnalytics.NewDesignEvent(event_id, event_value);
