@@ -345,6 +345,30 @@ public class BoatControllers : MonoBehaviour {
             return;
         }
         CancelInvoke();
+        if (SceneManager.GetActiveScene().buildIndex == 2)
+        {
+            string armoryType = "World_01";
+            string itemRarity = score.ToString();
+            string event_id = armoryType + ":" + itemRarity;
+            float event_value = 0.0f;
+            GameAnalytics.NewDesignEvent(event_id, event_value);
+        }
+        else if (SceneManager.GetActiveScene().buildIndex == 3)
+        {
+            string armoryType = "World_02";
+            string itemRarity = score.ToString();
+            string event_id = armoryType + ":" + itemRarity;
+            float event_value = 0.0f;
+            GameAnalytics.NewDesignEvent(event_id, event_value);
+        }
+        else if (SceneManager.GetActiveScene().buildIndex == 4)
+        {
+            string armoryType = "World_03";
+            string itemRarity = score.ToString();
+            string event_id = armoryType + ":" + itemRarity;
+            float event_value = 0.0f;
+            GameAnalytics.NewDesignEvent(event_id, event_value);
+        }
         string currency = "Gold";
         float amountEarned = score;
         string itemType = "IAP";
